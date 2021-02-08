@@ -1,0 +1,21 @@
+@api= http://localhost:5000
+
+GET {{api}}/videos
+
+###
+GET {{api}}/videos/1
+###
+POST {{api}}/videos
+Content-Type: application/json
+
+{
+    "url": "https://www.youtube.com/watch?v=CrrdM-z11L4&list=PLE550041E17C26BA0&index=20",
+    "title": "Salsa Music",
+    "description": "beauty music from latam"
+
+}
+###
+DELETE {{api}}/videos/1
+
+###
+PUT {{api}}/videos/1
