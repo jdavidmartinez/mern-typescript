@@ -9,6 +9,8 @@ router.get('/videos/:id', videoCtrl.getVideo);
 
 router.post('/videos', videoCtrl.createVideos);
 
-router.delete('/videos/:id',videoCtrl.)
+router.delete('/videos/:id',videoCtrl.deleteVideo);
+
+router.put('/videos/:id', videoCtrl.updateVideo);
 
 export default router;
