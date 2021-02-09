@@ -13,16 +13,25 @@ export const createVideos: RequestHandler = async (req, res)=> {
     res.json('video saved')
    }
 
-export const getVideos: RequestHandler = (req, res)=> {
-     res.json('getting videos')
+export const getVideos: RequestHandler = async (req, res)=> {
+    try {
+        const videos= await Video.find() 
+        return res.json(videos)
+    } catch (error) {
+        res.json(error);
+    }
     }
 
-export const getVideo: RequestHandler = (req, res)=> {
-     res.json('getting a video')
+export const getVideo: RequestHandler = async (req, res)=> {
+        const videoFound = await Video.findById(req.params.id)
+        if (!videoFound) return res.status(204).json(); 
+        return res.json(videoFound);
     }
 
-export const deleteVideo: RequestHandler = (req, res)=> {
-     res.json('deletting videos')
+export const deleteVideo: RequestHandler = async (req, res)=> {
+    const videoFound = await Video.findByIdAndDelete(req.params.id)
+    if (!videoFound) return res.status(204).json(); 
+    return res.json(videoFound);
     }
 export const updateVideo: RequestHandler = (req, res)=> {
     res.json('updating a video')

@@ -3,15 +3,15 @@
 GET {{api}}/videos
 
 ###
-GET {{api}}/videos/1
+GET {{api}}/videos/60208859b1b9b775e846881f
 ###
 POST {{api}}/videos
 Content-Type: application/json
 
 {
-    "url": "https://www.youtube.com/watch?v=CrrdM-z11L4&list=PLE550041E17C26BA0&index=20",
-    "title": "Salsa Music",
-    "description": "beauty music from latam"
+    "url": "https://www.youtube.com/watch?v=DWKUEPqLn3k",
+    "title": "La gran belleza",
+    "description": "Italian film"
 
 }
 ###
